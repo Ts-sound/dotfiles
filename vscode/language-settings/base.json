@@ -1,0 +1,19 @@
+{
+    "files.exclude": {
+        ".gitignore": false,
+        "build": true,
+        "run": true,
+        "log": true
+    },
+    "doxdocgen.file.versionTag": "@version 1.0.0",
+    "doxdocgen.generic.authorEmail": "1564264931@qq.com",
+    "doxdocgen.generic.authorName": "tong",
+    "doxdocgen.generic.authorTag": "@author {author} ",
+    "doxdocgen.file.copyrightTag": [
+        "tong Copyright (c) {year}"
+    ],
+    "files.autoSave": "onFocusChange",
+    "editor.formatOnSave": true,
+    "xml.format.maxLineWidth": 0,
+    "markdown-preview-enhanced.plantumlJarPath": "/opt/tong/dotfiles/vscode/assets/plantuml.jar"
+}

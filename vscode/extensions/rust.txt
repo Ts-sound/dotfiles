@@ -1,0 +1,5 @@
+hdevalke.rust-test-lens@1.0.0
+rust-lang.rust-analyzer@0.3.2319
+serayuzgur.crates@0.6.7
+tamasfe.even-better-toml@0.19.2
+vadimcn.vscode-lldb@1.11.8

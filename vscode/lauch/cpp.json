@@ -1,0 +1,16 @@
+{
+
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "name": "C++ Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/usr/bin/ls",
+            "args": ["-l", "-a"],
+            "environment": [],
+            "cwd": "${workspaceFolder}"
+          }
+    ]
+}

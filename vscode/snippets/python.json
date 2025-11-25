@@ -1,0 +1,17 @@
+{
+    "Main Function": {
+        "prefix": "main",
+        "body": [
+            "if __name__ == \"__main__\":",
+            "    $1"
+        ],
+        "description": "Python main "
+    },
+    "Print Debug": {
+        "prefix": "pdebug",
+        "body": [
+            "print(f\"${1:variable}: {$1}\")"
+        ],
+        "description": "print debug statement"
+    }
+}

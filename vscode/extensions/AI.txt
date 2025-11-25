@@ -1,0 +1,4 @@
+GitHub.copilot@1.250.0
+GitHub.copilot-chat@0.11.1
+saoudrizwan.claude-dev@3.34.0
+Continue.continue@0.8.66 

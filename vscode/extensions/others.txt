@@ -1,0 +1,1 @@
+tatsy.vscode-3d-preview@0.2.1
