@@ -2,12 +2,10 @@
     "python.testing.unittestArgs": [
         "-v",
         "-s",
-        ".",
+        "./vscode/scripts/",
         "-p",
-        "*test*.py"
+        "*test.py"
     ],
     "python.testing.pytestEnabled": false,
-    "python.testing.unittestEnabled": true,
-    "pythonTestExplorer.outputs.showOutputsOnRun": true,
-    "pythonTestExplorer.testFramework": "unittest"
+    "python.testing.unittestEnabled": true
 }
