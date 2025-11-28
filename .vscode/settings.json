@@ -15,4 +15,6 @@
         "--line-length",
         "300"
     ],
+    "C_Cpp.clang_format_fallbackStyle": "aaa",
+    "C_Cpp.clang_format_style": "{ BasedOnStyle: Google,  IndentWidth: 2, TabWidth: 2, BreakBeforeBraces: Attach, AllowShortIfStatementsOnASingleLine: true, IndentCaseLabels: false, ColumnLimit: 140, AccessModifierOffset: -4, NamespaceIndentation: None, FixNamespaceComments: false }"
 }

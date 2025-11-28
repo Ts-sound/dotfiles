@@ -5,6 +5,12 @@
 * [√] 安装指定 group 组件列表 (-f 强制更新版本不一致组件)
 * [-] 安装指定 extension 组件 (-f 强制更新版本不一致组件)
 
+* export to PATH
+
+```bash
+export PATH="$PATH:/opt/tong/dotfiles/vscode/scripts"
+```
+
 ## vscode list extension
 
 ```bash

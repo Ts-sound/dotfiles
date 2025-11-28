@@ -64,6 +64,25 @@ class ExtensionInstaller:
         ret = [ext for ext in self.installed_extensions if ext.equals(extension, is_compare_version=is_compare_version)]
         return ret[0] if len(ret) > 0 else None
 
+    def get_target_group_settings(self, group: str):
+        """
+        file in ../language-settings/[group].json
+        """
+
+        file = os.path.join(filepath, "../language-settings/", f"{group}.json")
+        if not os.path.exists(file):
+            return None
+
+        with open(file, "r") as f:
+            try:
+                settings = json.load(f)
+                logging.info(f"Loaded settings for group {group} from {file}: {settings}")
+            except json.JSONDecodeError:
+                logging.error(f"errSettings file [{file}] is not a valid JSON.")
+                exit(1)
+            return settings
+        return None
+
     def install_extension(self, extension: ExtensionInfo):
         if self.is_installed(extension):
             logging.debug(f"Extension {extension} is already installed.")
@@ -135,7 +154,7 @@ def handle_list_installed_with_group(installer: ExtensionInstaller, group: str):
     return
 
 
-def handle_install_target_group(installer: ExtensionInstaller, install_pattern: str, group: str, force: bool = False):
+def handle_install_target_group(installer: ExtensionInstaller, install_pattern: str, group: str, dot_vscode_work_dir, force: bool = False):
     group_detail = GroupExtensionsInstallDetail(installer, group)
 
     # install not installed extensions
@@ -147,6 +166,53 @@ def handle_install_target_group(installer: ExtensionInstaller, install_pattern: 
     if force:
         for ext in group_detail.install_exts_version_not_compatible:
             installer.install_extension(ext)
+
+    # add recommendations settins to .vscode/settings.json
+    settings = installer.get_target_group_settings(group)
+    if settings and dot_vscode_work_dir:
+        # add to dot_vscode_work_dir/.vscode/settings.json
+        vscode_settings_file = os.path.join(dot_vscode_work_dir, ".vscode", "settings.json")
+        os.makedirs(os.path.dirname(vscode_settings_file), exist_ok=True)
+        if os.path.exists(vscode_settings_file):
+            with open(vscode_settings_file, "r") as f:
+                try:
+                    existing_settings = json.load(f)
+                except json.JSONDecodeError:
+                    logging.error(f"err: Existing settings file [{vscode_settings_file}] is not a valid JSON.")
+                    exit(1)
+
+        else:
+            existing_settings = {}
+
+        # merge settings , -force replace existing keys
+        for key, value in settings.items():
+            if key in existing_settings:
+                if force:
+                    logging.info(f"Overriding existing setting {key} in {vscode_settings_file}")
+                    existing_settings[key] = value
+                else:
+                    logging.info(f"Setting {key} already exists in {vscode_settings_file}, skipping. Use --force to override.")
+                    continue
+            else:
+                logging.debug(f"Adding new setting {key} to {vscode_settings_file}")
+                existing_settings[key] = value
+
+        with open(vscode_settings_file, "w") as f:
+            json.dump(existing_settings, f, indent=4)
+            logging.info(f"Updated settings written to {vscode_settings_file}")
+    return
+
+
+def handle_install_specific_extension(installer: ExtensionInstaller, install_extension: str, force: bool = False):
+    ext_info = ExtensionInfo(install_extension)
+
+    if not installer.is_installed(ext_info):
+        installer.install_extension(ext_info)
+    else:
+        if force:
+            installer.install_extension(ext_info)
+        else:
+            logging.info(f"Extension {install_extension} is already installed. Use --force to reinstall.")
     return
 
 
@@ -163,6 +229,17 @@ def main(args=None):
     list_installed = args.list_installed
     group = args.group
     install = args.install
+    dot_vscode_work_dir = args.dot_vscode_work_dir
+    if (dot_vscode_work_dir) and (dot_vscode_work_dir.strip() == "."):
+        # get terminal current working dir
+        dot_vscode_work_dir = os.getcwd()
+    elif dot_vscode_work_dir:
+        if not os.path.exists(dot_vscode_work_dir):
+            logging.error(f"dot_vscode_work_dir {dot_vscode_work_dir} does not exist!")
+            return
+
+    else:
+        dot_vscode_work_dir = None
 
     installer = ExtensionInstaller()
 
@@ -188,7 +265,11 @@ def main(args=None):
     if list_installed and group:
         handle_list_installed_with_group(installer, group)
     elif install and group:
-        handle_install_target_group(installer, install, group, force=(args.force if args.force is None else False))
+        handle_install_target_group(installer, install, group=group, dot_vscode_work_dir=dot_vscode_work_dir, force=(args.force if args.force is None else False))
+    elif install and not group:
+        handle_install_specific_extension(installer, install, force=(args.force if args.force is None else False))
+    else:
+        argparse.print_help()
     return
 
 
@@ -197,6 +278,7 @@ if __name__ == "__main__":
     argparse.add_argument("--install", "-i", type=str, help="Install the specified extension (format: vendor.name@version) , * for all")
     argparse.add_argument("--group", "-g", type=str, help="all,cpp,python,rust ..., group name to install extensions from  extensions/[group].txt")
     argparse.add_argument("--list-installed", "-l", action="store_true", help="List all installed extensions")
-    argparse.add_argument("--force", "-f", type=bool, help="Force reinstall even if the extension is already installed")
+    argparse.add_argument("--force", "-f", action="store_true", help="Force reinstall even if the extension is already installed")
+    argparse.add_argument("--dot_vscode_work_dir", "-dir", type=str, help="work dir with .vscode directory in, default is None")
     args = argparse.parse_args()
     main(args)

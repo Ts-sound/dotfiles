@@ -4,7 +4,6 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-
         {
             "name": "Current File with args : -i '*' -g cpp ",
             "type": "debugpy",
@@ -20,6 +19,30 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "args": "-l"
+        },
+        {
+            "name": "Current File with args : -i alefragnani.bookmarks  ",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": "-i alefragnani.bookmarks"
+        },
+        {
+            "name": "Current File with args : -i '*' -g cpp -dir . ",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": "-i '*' -g cpp -dir ."
+        },
+        {
+            "name": "Current File with args : -i '*' -g cpp -dir . -f",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": "-i '*' -g cpp -dir . -f"
         }
     ]
 }
