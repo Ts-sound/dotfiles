@@ -1,7 +1,8 @@
 {
     "black-formatter.args": [
         "--line-length",
-        "200"
+        "300",
+        "--skip-string-normalization"
     ],
     "python.testing.unittestArgs": [
         "-v",
