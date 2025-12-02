@@ -23,6 +23,9 @@
     "plantuml.exportFormat": "svg",
     "plantuml.exportConcurrency": 1,
     "markdownlint.config": {
+        "MD007": {
+            "indent": 4
+        },
         "MD010": false,
         "MD029": false,
         "MD033": false,
