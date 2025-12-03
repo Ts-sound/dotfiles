@@ -7,6 +7,11 @@ My Dev Tool Environment - Dotfiles
 
 本项目默认安装到  `/opt/tong/` 路径；
 
+```bash
+mkdir -p /opt/tong
+cd /opt/tong && git clone git@github.com:Ts-sound/dotfiles.git
+```
+
 ## vsdoce dotfiles 使用
 
 ![vscode](./vscode/readme.md)
