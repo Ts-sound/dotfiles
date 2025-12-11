@@ -31,6 +31,7 @@
         "MD033": false,
         "MD045": false
     },
+    "bookmarks.saveBookmarksInProject": true,
     "commentTranslate.source": "Bing",
     "commentTranslate.maxTranslationLength": 200,
     "commentTranslate.targetLanguage": "zh-CN",
