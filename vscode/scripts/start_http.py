@@ -21,6 +21,6 @@ class CORSRequestHandler(SimpleHTTPRequestHandler):
 
 if __name__ == "__main__":
     os.chdir(filepath + "/../assets")
-    server_address = ("localhost", 8000)
+    server_address = ("localhost", 8001)
     httpd = HTTPServer(server_address, CORSRequestHandler)
     httpd.serve_forever()

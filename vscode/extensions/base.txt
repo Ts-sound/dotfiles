@@ -27,3 +27,4 @@ hediet.vscode-drawio
 SimonSiefke.svg-preview
 alefragnani.bookmarks
 ms-edgedevtools.vscode-edge-devtools
+bierner.gif-player

@@ -29,6 +29,7 @@
         "MD010": false,
         "MD029": false,
         "MD033": false,
+        "MD034": false,
         "MD045": false
     },
     "bookmarks.saveBookmarksInProject": true,

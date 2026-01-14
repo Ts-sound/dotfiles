@@ -53,3 +53,8 @@ code --install-extension $extension
 ```bash
 python3 -m http.server 8000 --bind localhost
 ```
+
+## local extension
+
+- pomdtr.excalidraw-editor
+- hediet.vscode-drawio

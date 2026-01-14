@@ -14,6 +14,10 @@ class ExtensionInfo:
         self.vendor = self.name.split(".")[0]
         self.name = self.name.split(".")[1]
 
+        # TODO: to lower
+        self.name = self.name.lower()
+        self.vendor = self.vendor.lower()
+
     def get_without_version(self):
         return f"{self.vendor}.{self.name}"
 
