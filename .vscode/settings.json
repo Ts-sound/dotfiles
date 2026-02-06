@@ -42,9 +42,14 @@
             "indent": 4
         },
         "MD010": false,
+        "MD022": false,
+        "MD024": false,
         "MD029": false,
+        "MD032": false,
         "MD033": false,
-        "MD045": false
+        "MD034": false,
+        "MD045": false,
+        "MD047": false
     },
     "bookmarks.saveBookmarksInProject": true,
     "commentTranslate.source": "Bing",
