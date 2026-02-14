@@ -6,7 +6,7 @@
         "log": true
     },
     "doxdocgen.file.versionTag": "@version 1.0.0",
-    "doxdocgen.generic.authorEmail": "1564264931@qq.com",
+    "doxdocgen.generic.authorEmail": "xxx@qq.com",
     "doxdocgen.generic.authorName": "tong",
     "doxdocgen.generic.authorTag": "@author {author}",
     "doxdocgen.file.copyrightTag": [
@@ -26,8 +26,12 @@
         "MD007": {
             "indent": 4
         },
+        "MD009": false,
         "MD010": false,
+        "MD022": false,
+        "MD024": false,
         "MD029": false,
+        "MD032": false,
         "MD033": false,
         "MD034": false,
         "MD045": false
