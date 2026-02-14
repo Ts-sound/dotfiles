@@ -3,10 +3,10 @@
 ## 添加到环境变量
 
 ```bash
-export PATH="$PATH:/opt/tong/dotfiles/vscode/scripts"
+export PATH="$PATH:/opt/tong/ws/git-repo/dotfiles/vscode/scripts"
 
 # echo to ~/.bashrc
-echo 'export PATH="$PATH:/opt/tong/dotfiles/vscode/scripts"' >> ~/.bashrc
+echo 'export PATH="$PATH:/opt/tong/ws/git-repo/dotfiles/vscode/scripts"' >> ~/.bashrc
 ```
 
 ## 使用说明

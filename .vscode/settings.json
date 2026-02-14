@@ -34,7 +34,7 @@
     "todo-tree.tree.scanMode": "workspace",
     "todo-tree.general.statusBar": "total",
     "todo-tree.filtering.ignoreGitSubmodules": true,
-    "plantuml.jar": "/opt/tong/dotfiles/vscode/assets/",
+    "plantuml.jar": "/opt/tong/ws/git-repo/dotfiles/vscode/assets/",
     "plantuml.exportFormat": "svg",
     "plantuml.exportConcurrency": 1,
     "markdownlint.config": {
@@ -58,7 +58,7 @@
     "commentTranslate.hover.string": true,
     "commentTranslate.hover.variable": true,
     "commentTranslate.hover.concise": true,
-    "markdown-preview-enhanced.plantumlJarPath": "/opt/tong/dotfiles/vscode/assets/plantuml.jar",
+    "markdown-preview-enhanced.plantumlJarPath": "/opt/tong/ws/git-repo/dotfiles/vscode/assets/plantuml.jar",
     "yaml.schemas": {
         "https://squidfunk.github.io/mkdocs-material/schema.json": "mkdocs.yml"
     },
