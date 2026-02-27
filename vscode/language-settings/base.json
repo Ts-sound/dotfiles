@@ -31,9 +31,11 @@
         "MD022": false,
         "MD024": false,
         "MD029": false,
+        "MD031": false,
         "MD032": false,
         "MD033": false,
         "MD034": false,
+        "MD040": false,
         "MD045": false,
         "MD047": false
     },
@@ -45,6 +47,16 @@
     "commentTranslate.hover.variable": true,
     "commentTranslate.hover.concise": true,
     "markdown-preview-enhanced.plantumlJarPath": "/opt/tong/ws/git-repo/dotfiles/vscode/assets/plantuml.jar",
+    "markdown-preview-enhanced.mathRenderingOption": "MathJax",
+    "markdown-preview-enhanced.mathRenderingOnlineService": "https://latex.codecogs.com/gif.latex",
+    "markdown-preview-enhanced.mathBlockDelimiters": [
+        [
+            "$$",
+            "$$"
+        ]
+    ],
+    "markdown-preview-enhanced.mathjaxV3ScriptSrc": "http://127.0.0.1:8001/mathjax/es5/tex-mml-chtml.js",
+    "markdown-preview-enhanced.scrollSync": true,
     "yaml.schemas": {
         "https://squidfunk.github.io/mkdocs-material/schema.json": "mkdocs.yml"
     },

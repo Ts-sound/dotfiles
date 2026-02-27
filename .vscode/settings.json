@@ -73,5 +73,6 @@
     ],
     "mermaid-editor.generate.quality": 1024,
     "mermaid-editor.generate.scale": 1,
-    "mermaid-editor.generate.type": "svg"
+    "mermaid-editor.generate.type": "svg",
+    "svn.ignoreMissingSvnWarning": true
 }
